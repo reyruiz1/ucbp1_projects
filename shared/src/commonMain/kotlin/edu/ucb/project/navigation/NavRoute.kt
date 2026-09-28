@@ -11,4 +11,7 @@ sealed class NavRoute {
 
     @Serializable
     object Catalog : NavRoute()
+
+    @Serializable
+    object People : NavRoute()
 }

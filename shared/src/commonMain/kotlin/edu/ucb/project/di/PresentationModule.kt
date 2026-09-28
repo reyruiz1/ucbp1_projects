@@ -1,5 +1,6 @@
 package edu.ucb.project.di
 
+import edu.ucb.project.Exam.presentation.viewmodel.PeopleViewModel
 import edu.ucb.project.catalogo.presentation.viewmodel.CatalogViewModel
 import edu.ucb.project.login.presentation.state.LoginViewModel
 import edu.ucb.project.userSearch.Presentation.viewModel.UserSearchViewModel
@@ -10,4 +11,5 @@ val presentationModule = module {
     viewModelOf(::UserSearchViewModel)
     viewModelOf(::LoginViewModel)
     viewModelOf(::CatalogViewModel)
+    viewModelOf(::PeopleViewModel)
 }
