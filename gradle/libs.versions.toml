@@ -10,6 +10,7 @@ androidx-espresso = "3.7.0"
 androidx-lifecycle = "2.11.0-beta01"
 androidx-testExt = "1.3.0"
 composeMultiplatform = "1.11.1"
+firebaseDatabase = "2.7.0"
 junit = "4.13.2"
 kotlin = "2.4.10"
 material3 = "1.11.0-alpha07"
@@ -17,9 +18,14 @@ koinBom = "4.2.2"
 kotlinxSerializationJson = "1.8.0"
 navigationCompose = "2.9.2"
 ktor = "3.3.0"
+ksp = "2.3.6"
+room3 = "3.1.0-alpha01"
+sqlite = "2.7.1"
 coil = "3.3.0"
+googleServices = "4.4.2" # O la última versión estable
 
 [libraries]
+firebase-database = { module = "dev.gitlive:firebase-database", version.ref = "firebaseDatabase" }
 koin-android = { module = "io.insert-koin:koin-android"}
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -51,6 +57,11 @@ ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
+androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+androidx-room3-runtime = { module = "androidx.room3:room3-runtime", version.ref = "room3" }
+androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3" }
+# Optional SQLite Wrapper
+androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -59,3 +70,6 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMul
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+androidx-room3 = { id = "androidx.room3", version.ref = "room3" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

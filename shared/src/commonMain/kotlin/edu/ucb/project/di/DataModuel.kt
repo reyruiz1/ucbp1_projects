@@ -1,5 +1,14 @@
 package edu.ucb.project.di
 
+import org.koin.core.module.dsl.singleOf
+import edu.ucb.project.config.AppDatabase
+import edu.ucb.project.exchange.data.datasource.RealTimeDataBase
+import edu.ucb.project.exchange.data.repository.ExchangeRepositoryImpl
+import edu.ucb.project.exchange.domain.repository.ExchangeRepository
+import edu.ucb.project.movies.data.dao.DollarDao
+import edu.ucb.project.movies.data.datasource.DollarLocalDataSource
+import edu.ucb.project.movies.data.repository.DollarRepositoryImpl
+import edu.ucb.project.movies.domain.repository.DollarRepository
 import edu.ucb.project.Exam.data.dataSource.PeopleRemoteDataSource
 import edu.ucb.project.Exam.data.repository.PeopleRepositoryImpl
 import edu.ucb.project.Exam.data.service.PeopleService
@@ -18,4 +27,11 @@ val dataModule = module {
     single<CatalogRespository> { CatalogRepositoryImpl(get()) }
     single<PeopleRemoteDataSource> { PeopleService() }
     single<PeopleRespository> { PeopleRepositoryImpl(get()) }
+    single<DollarDao> {
+        get<AppDatabase>().getDao()
+    }
+    singleOf(::DollarLocalDataSource)
+    single<DollarRepository> { DollarRepositoryImpl(get()) }
+    singleOf(::RealTimeDataBase)
+    single<ExchangeRepository> { ExchangeRepositoryImpl(get()) }
 }

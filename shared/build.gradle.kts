@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.room3)
 }
 
 kotlin {
@@ -25,7 +27,7 @@ kotlin {
        minSdk = libs.versions.android.minSdk.get().toInt()
     
        compilerOptions {
-           jvmTarget = JvmTarget.JVM_11
+           jvmTarget = JvmTarget.JVM_17
        }
        androidResources {
            enable = true
@@ -68,15 +70,25 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
+            implementation(libs.firebase.database)
+            implementation(libs.androidx.room3.runtime)
+            implementation(libs.androidx.room3.sqlite.wrapper)
 
 
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.androidx.room3.runtime)
+            implementation(libs.androidx.sqlite.bundled)
         }
     }
 }
 
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
+    add("kspAndroid", libs.androidx.room3.compiler)
+}
+
+room3 {
+    schemaDirectory("$projectDir/schemas")
 }
