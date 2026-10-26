@@ -35,18 +35,6 @@ fun MenuScreen(navController: NavHostController) {
             Text("E50-5 · Tareas (Firestore + notificación)")
         }
 
-        Button(
-            onClick = { navController.navigate(NavRoute.Notificaciones) },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("E25-5 · Notificaciones locales")
-        }
 
-        Button(
-            onClick = { navController.navigate(NavRoute.ConfigLocal) },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("E25-2 · Configuración local (Room)")
-        }
     }
 }

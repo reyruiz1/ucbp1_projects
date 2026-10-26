@@ -1,31 +1,22 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Proyecto de evaluación · Kotlin Multiplatform y Firebase
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Proyecto grupal desarrollado con **Kotlin Multiplatform (KMP)** y **Compose Multiplatform**, tomando como base la rama `feature/grpc-logs` del repositorio. Para la evaluación se eligió la combinación **E50-5 + E25-5 + E25-2**, con un total de **100 puntos**.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## Integrantes
 
-### Running the apps
+- Juan Pablo Rivera
+- Josue Camacho
+- Reynaldo Ruiz
+- Gabriel Claros
+- Mateo Cossio
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## Combinación de ejercicios elegida
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+| Ejercicio | Puntaje | Descripción |
+| --- | ---: | --- |
+| **E50-5** | **50 pts** | **Firestore + notificación interna al agregar un documento.** Escucha en tiempo real la colección `tareas`, detecta documentos añadidos y muestra una notificación local que permite abrir la pantalla de tareas. Incluye una opción persistente para silenciar notificaciones. |
+| **E25-5** | **25 pts** | **Notificaciones locales de Android.** Ejercicio independiente con una pantalla y un canal de notificaciones generales. |
+| **E25-2** | **25 pts** | **Configuración local con Room.** Ejercicio independiente para gestionar información o preferencias mediante persistencia local. |
+| **Total** | **100 pts** | |
 
-### Running tests
-
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
-
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
-
----
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+> **Nota:** Los alcances específicos de E25-5 y E25-2 deben contrastarse con sus guías respectivas (`GUIA_E25-5_Notificaciones_Mateo.md` y `GUIA_E25-2_Room_Gabriel.md`). Este README resume su función general; no sustituye esas rúbricas.

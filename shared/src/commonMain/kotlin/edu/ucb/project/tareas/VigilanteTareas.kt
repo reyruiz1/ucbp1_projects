@@ -1,6 +1,7 @@
 package edu.ucb.project.tareas
 
 import edu.ucb.project.tareas.domain.NotificadorTareas
+import edu.ucb.project.tareas.domain.PreferenciasTareas
 import edu.ucb.project.tareas.domain.repository.TareasRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
