@@ -7,5 +7,7 @@ fun sharedModule(): List<Module> = listOf(
     platformModule(),
     dataModule,
     presentationModule,
-    domainModule
+    domainModule,
+    tareasModule,
+    configLocalModule
 )
