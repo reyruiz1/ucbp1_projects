@@ -4,6 +4,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 sealed class NavRoute {
     @Serializable
+    object Notificaciones : NavRoute()
+    @Serializable
     object Login : NavRoute()
 
     @Serializable

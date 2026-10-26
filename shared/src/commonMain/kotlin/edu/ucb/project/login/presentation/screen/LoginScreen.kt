@@ -48,12 +48,16 @@ fun LoginScreen(
         onLogin = { viewModel.emitEvent(LoginEvent.LoginPressed) },
         onSearch = { navController.navigate(NavRoute.UserSearch) },
         onPeople = { navController.navigate(NavRoute.People) },
-        onLogs = { navController.navigate(NavRoute.Logs) }
+        onLogs = { navController.navigate(NavRoute.Logs) },
+        onNotificaciones = {
+            navController.navigate(NavRoute.Notificaciones)
+        }
     )
 }
 
 @Composable
 private fun LoginContent(
+    onNotificaciones: () -> Unit,
     state: LoginState,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
@@ -94,6 +98,9 @@ private fun LoginContent(
         Button(onClick = onLogs) {
             Text("Logs gRPC")
         }
+        Button(onClick = onNotificaciones) {
+            Text("E25-5 · Notificaciones locales")
+        }
     }
 }
 
@@ -108,7 +115,8 @@ private fun LoginScreenPreview() {
             onLogin = {},
             onSearch = {},
             onPeople = {},
-            onLogs = {}
+            onLogs = {},
+            onNotificaciones = {}
         )
     }
 }
