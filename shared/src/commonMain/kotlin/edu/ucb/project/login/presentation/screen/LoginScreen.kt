@@ -47,7 +47,8 @@ fun LoginScreen(
         onPasswordChange = { viewModel.emitEvent(LoginEvent.PasswordChanged(it)) },
         onLogin = { viewModel.emitEvent(LoginEvent.LoginPressed) },
         onSearch = { navController.navigate(NavRoute.UserSearch) },
-        onPeople = { navController.navigate(NavRoute.People) }
+        onPeople = { navController.navigate(NavRoute.People) },
+        onLogs = { navController.navigate(NavRoute.Logs) }
     )
 }
 
@@ -58,7 +59,8 @@ private fun LoginContent(
     onPasswordChange: (String) -> Unit,
     onLogin: () -> Unit,
     onSearch: () -> Unit,
-    onPeople: () -> Unit
+    onPeople: () -> Unit,
+    onLogs: () -> Unit
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -88,6 +90,10 @@ private fun LoginContent(
         Button(onClick = onPeople) {
             Text("Personajes")
         }
+
+        Button(onClick = onLogs) {
+            Text("Logs gRPC")
+        }
     }
 }
 
@@ -101,7 +107,8 @@ private fun LoginScreenPreview() {
             onPasswordChange = {},
             onLogin = {},
             onSearch = {},
-            onPeople = {}
+            onPeople = {},
+            onLogs = {}
         )
     }
 }

@@ -1,6 +1,6 @@
 [versions]
 agp = "9.0.1"
-android-compileSdk = "36"
+android-compileSdk = "37"
 android-minSdk = "24"
 android-targetSdk = "36"
 androidx-activity = "1.13.0"
@@ -24,6 +24,7 @@ sqlite = "2.7.1"
 coil = "3.3.0"
 googleServices = "4.4.2" # O la última versión estable
 workRuntimeKtx = "2.11.0"
+wire = "7.0.3"
 
 [libraries]
 firebase-database = { module = "dev.gitlive:firebase-database", version.ref = "firebaseDatabase" }
@@ -67,6 +68,9 @@ androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.re
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 # Optional SQLite Wrapper
 androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
+# gRPC con Wire (compatible con KMP)
+wire-runtime = { module = "com.squareup.wire:wire-runtime", version.ref = "wire" }
+wire-grpc-client = { module = "com.squareup.wire:wire-grpc-client", version.ref = "wire" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -78,3 +82,4 @@ kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versio
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 androidx-room3 = { id = "androidx.room3", version.ref = "room3" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+wire = { id = "com.squareup.wire", version.ref = "wire" }

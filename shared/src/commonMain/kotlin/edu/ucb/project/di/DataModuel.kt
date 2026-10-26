@@ -22,6 +22,9 @@ import edu.ucb.project.userSearch.Domain.repository.GithubRepository
 import edu.ucb.project.firebasetest.data.datasource.FirestoreDataSource
 import edu.ucb.project.firebasetest.data.datasource.MessagingDataSource
 import edu.ucb.project.firebasetest.data.datasource.RemoteConfigDataSource
+import edu.ucb.project.log.data.datasource.LogsRemoteDataSource
+import edu.ucb.project.log.data.repository.LogRepositoryImpl
+import edu.ucb.project.log.domain.repository.LogRepository
 import org.koin.dsl.module
 
 val dataModule = module {
@@ -40,4 +43,6 @@ val dataModule = module {
     singleOf(::FirestoreDataSource)
     singleOf(::RemoteConfigDataSource)
     singleOf(::MessagingDataSource)
+    singleOf(::LogsRemoteDataSource)
+    single<LogRepository> { LogRepositoryImpl(get()) }
 }

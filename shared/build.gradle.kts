@@ -8,6 +8,18 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room3)
+    alias(libs.plugins.wire)
+}
+
+wire {
+    sourcePath {
+        srcDir("src/commonMain/proto")
+    }
+
+    kotlin {
+        rpcRole = "client"
+        rpcCallStyle = "suspending"
+    }
 }
 
 kotlin {
@@ -77,8 +89,8 @@ kotlin {
             implementation(libs.firebase.messaging)
             implementation(libs.androidx.room3.runtime)
             implementation(libs.androidx.room3.sqlite.wrapper)
-
-
+            implementation(libs.wire.runtime)
+            implementation(libs.wire.grpc.client)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

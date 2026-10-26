@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import edu.ucb.project.Exam.presentation.screen.PeopleScreen
 import edu.ucb.project.catalogo.presentation.screen.CatalogScreen
+import edu.ucb.project.log.presentation.screen.LogScreen
 import edu.ucb.project.login.presentation.screen.LoginScreen
 import edu.ucb.project.userSearch.Presentation.screen.UserSearchScreen
 
@@ -29,6 +30,10 @@ fun AppNavHost() {
 
         composable<NavRoute.People> {
             PeopleScreen(navController = navController)
+        }
+
+        composable<NavRoute.Logs> {
+            LogScreen(navController = navController)
         }
     }
 }
