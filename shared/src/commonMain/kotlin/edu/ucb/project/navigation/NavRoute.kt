@@ -17,4 +17,16 @@ sealed class NavRoute {
 
     @Serializable
     object Logs : NavRoute()
+
+    @Serializable
+    object Menu : NavRoute()
+
+    @Serializable
+    object Tareas : NavRoute()
+
+    @Serializable
+    object Notificaciones : NavRoute()
+
+    @Serializable
+    object ConfigLocal : NavRoute()
 }
