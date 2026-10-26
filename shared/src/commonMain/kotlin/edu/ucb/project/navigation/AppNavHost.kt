@@ -1,6 +1,7 @@
 package edu.ucb.project.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,7 +16,7 @@ import edu.ucb.project.tareas.presentation.screen.TareasScreen
 import edu.ucb.project.userSearch.Presentation.screen.UserSearchScreen
 
 @Composable
-fun AppNavHost() {
+fun AppNavHost(destino: String? = null) {
 
     val navController = rememberNavController()
 
@@ -54,6 +55,12 @@ fun AppNavHost() {
 
         composable<NavRoute.ConfigLocal> {
             ConfigLocalScreen()
+        }
+    }
+
+    LaunchedEffect(destino) {
+        if (destino == Destinos.TAREAS) {
+            navController.navigate(NavRoute.Tareas)
         }
     }
 }

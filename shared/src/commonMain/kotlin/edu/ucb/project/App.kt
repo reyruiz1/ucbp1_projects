@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import edu.ucb.project.navigation.AppNavHost
 
 @Composable
-fun App() {
+fun App(destino: String? = null) {
     MaterialTheme {
-        AppNavHost()
+        AppNavHost(destino = destino)
     }
 }

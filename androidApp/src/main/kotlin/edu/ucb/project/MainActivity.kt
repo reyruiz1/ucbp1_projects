@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import edu.ucb.project.navigation.Destinos
 
 class MainActivity : ComponentActivity() {
 
@@ -24,8 +25,10 @@ class MainActivity : ComponentActivity() {
 
         requestNotificationPermission()
 
+        val destino = intent.getStringExtra(Destinos.EXTRA_DESTINO)
+
         setContent {
-            App()
+            App(destino = destino)
         }
     }
 

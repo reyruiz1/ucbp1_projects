@@ -1,5 +1,6 @@
 package edu.ucb.project.di
 
+import edu.ucb.project.tareas.VigilanteTareas
 import edu.ucb.project.tareas.data.datasource.TareasFirestoreDataSource
 import edu.ucb.project.tareas.data.repository.TareasRepositoryImpl
 import edu.ucb.project.tareas.domain.repository.TareasRepository
@@ -9,4 +10,5 @@ import org.koin.dsl.module
 val tareasModule = module {
     singleOf(::TareasFirestoreDataSource)
     single<TareasRepository> { TareasRepositoryImpl(get()) }
+    singleOf(::VigilanteTareas)
 }
