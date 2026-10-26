@@ -14,7 +14,8 @@ import org.koin.mp.KoinPlatform
 // está abierta) y lanza una notificación por cada tarea nueva.
 class VigilanteTareas(
     private val repository: TareasRepository,
-    private val notificador: NotificadorTareas
+    private val notificador: NotificadorTareas,
+    private val preferencias: PreferenciasTareas
 ) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var job: Job? = null
@@ -25,7 +26,9 @@ class VigilanteTareas(
             repository.observarTareasNuevas()
                 .catch { e -> println("VigilanteTareas ERROR: ${e.message}") }
                 .collect { tarea ->
-                    notificador.notificarNuevaTarea(tarea)
+                    if (!preferencias.estaSilenciado()) {
+                        notificador.notificarNuevaTarea(tarea)
+                    }
                 }
         }
     }
