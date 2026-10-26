@@ -47,6 +47,7 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.androidx.work.runtime.ktx)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -71,6 +72,9 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
             implementation(libs.firebase.database)
+            implementation(libs.firebase.firestore)
+            implementation(libs.firebase.config)
+            implementation(libs.firebase.messaging)
             implementation(libs.androidx.room3.runtime)
             implementation(libs.androidx.room3.sqlite.wrapper)
 

@@ -23,9 +23,13 @@ room3 = "3.1.0-alpha01"
 sqlite = "2.7.1"
 coil = "3.3.0"
 googleServices = "4.4.2" # O la última versión estable
+workRuntimeKtx = "2.11.0"
 
 [libraries]
 firebase-database = { module = "dev.gitlive:firebase-database", version.ref = "firebaseDatabase" }
+firebase-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "firebaseDatabase" }
+firebase-config = { module = "dev.gitlive:firebase-config", version.ref = "firebaseDatabase" }
+firebase-messaging = { module = "dev.gitlive:firebase-messaging", version.ref = "firebaseDatabase" }
 koin-android = { module = "io.insert-koin:koin-android"}
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -60,6 +64,7 @@ coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.re
 androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 androidx-room3-runtime = { module = "androidx.room3:room3-runtime", version.ref = "room3" }
 androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 # Optional SQLite Wrapper
 androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
 

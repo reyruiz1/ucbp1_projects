@@ -18,4 +18,5 @@ captures
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
 androidApp/google-services.json
-androidApp/google-services.json
+
+hs_err_pid*.log
