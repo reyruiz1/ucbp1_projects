@@ -9,7 +9,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import org.koin.mp.KoinPlatform
-
+import edu.ucb.project.tareas.domain.PreferenciasTareas
 // Escucha Firestore durante toda la vida de la app (no solo cuando la pantalla de tareas
 // está abierta) y lanza una notificación por cada tarea nueva.
 class VigilanteTareas(
