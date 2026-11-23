@@ -29,4 +29,7 @@ sealed class NavRoute {
 
     @Serializable
     object ConfigLocal : NavRoute()
+
+    @Serializable
+    object PuenteWeb : NavRoute()
 }

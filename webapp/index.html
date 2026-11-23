@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartelera UCB</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1>Cartelera UCB</h1>
+    <div class="acciones">
+      <span id="estado" class="estado">Buscando la app…</span>
+      <button id="tema" class="tema" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="titulo-seccion">
+        <h2>En cartelera</h2>
+        <button class="app" data-pantalla="catalogo">Ver catálogo en la app</button>
+      </div>
+      <p id="seleccion" class="pista"></p>
+      <div id="cartelera" class="cartelera"></div>
+    </section>
+
+    <section>
+      <div class="titulo-seccion">
+        <h2>Mi lista para ver</h2>
+        <button class="app" data-pantalla="tareas">Abrir en la app</button>
+      </div>
+      <form id="form-tarea" class="form-tarea">
+        <input id="input-tarea" maxlength="80" autocomplete="off" placeholder="Ej: Comprar entradas para el viernes">
+        <button type="submit">Agregar</button>
+      </form>
+      <ul id="lista" class="lista">
+        <li class="vacia">Esperando la lista de la app…</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="titulo-seccion">
+        <h2>Bitácora web</h2>
+        <button id="ver-bitacora" class="secundario" type="button" aria-expanded="false" aria-controls="bitacora">Mostrar (0)</button>
+      </div>
+      <ol id="bitacora" class="bitacora" hidden></ol>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="puente.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

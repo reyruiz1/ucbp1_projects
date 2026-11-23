@@ -35,6 +35,13 @@ fun MenuScreen(navController: NavHostController) {
             Text("E50-5 · Tareas (Firestore + notificación)")
         }
 
+        Button(
+            onClick = { navController.navigate(NavRoute.PuenteWeb) },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Cartelera web · Paso de mensajes")
+        }
+
 
     }
 }

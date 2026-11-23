@@ -12,6 +12,7 @@ import edu.ucb.project.log.presentation.screen.LogScreen
 import edu.ucb.project.login.presentation.screen.LoginScreen
 import edu.ucb.project.menu.presentation.screen.MenuScreen
 import edu.ucb.project.notificaciones.presentation.screen.NotificacionesScreen
+import edu.ucb.project.puenteweb.presentation.screen.PuenteWebScreen
 import edu.ucb.project.tareas.presentation.screen.TareasScreen
 import edu.ucb.project.userSearch.Presentation.screen.UserSearchScreen
 
@@ -55,6 +56,10 @@ fun AppNavHost(destino: String? = null) {
 
         composable<NavRoute.ConfigLocal> {
             ConfigLocalScreen()
+        }
+
+        composable<NavRoute.PuenteWeb> {
+            PuenteWebScreen(navController = navController)
         }
     }
 

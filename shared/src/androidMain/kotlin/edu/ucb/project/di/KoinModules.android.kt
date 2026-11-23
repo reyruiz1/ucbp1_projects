@@ -11,6 +11,6 @@ fun initKoinAndroid(context: Context) {
     startKoin {
         androidContext(context)
         androidLogger()
-        modules(sharedModule() + tareasAndroidModule + notificacionesAndroidModule)
+        modules(sharedModule() + tareasAndroidModule + notificacionesAndroidModule + puenteWebAndroidModule)
     }
 }

@@ -9,5 +9,6 @@ fun sharedModule(): List<Module> = listOf(
     presentationModule,
     domainModule,
     tareasModule,
-    configLocalModule
+    configLocalModule,
+    puenteWebModule
 )
